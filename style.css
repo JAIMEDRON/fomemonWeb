@@ -1,0 +1,207 @@
+@keyframes jump {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-40%);
+    }
+}
+
+@keyframes pyrocynical {
+    from {
+        transform: scale(75%);
+    }
+    to {
+        transform: scale(100%);
+    }
+}
+
+@keyframes bailito {
+    from {
+        transform: rotate(-5deg)
+    }
+    to {
+        transform: rotate(5deg);
+    }
+}
+
+
+body{
+    background-image: url("./images/background.png");
+    background-repeat: repeat;
+    background-size: 50px;
+    counter-reset: children;
+    &.hideMouse{
+        cursor: none;
+    }
+}
+
+h1{
+    font-size: 70px;
+    margin-top: 30px;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    text-align: center;
+    span.contenido{
+        display: inline-block;
+        animation-name: jump;
+        animation-duration: 1s;
+        animation-direction:alternate-reverse;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+    }
+}
+
+marquee{
+    img{
+        height: 60px;
+    }
+    background-color: green;
+    margin: auto;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.genericText{
+    p{
+        font-family: "Comic Sans MS", "Comic Sans", cursive;
+        color: black;
+        background-color: #36692c;
+        font-size: 20px;
+        text-align: center;
+        padding: 10px;
+    }
+}
+
+.sideText{
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    p{
+        animation-name: bailito;
+        animation-duration: 6s;
+        animation-direction:alternate-reverse;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color: #294e22;
+        background-color: #bebebe;
+        font-size: 20px;
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            max-width:100%;
+            animation-name: pyrocynical;
+            animation-duration: 1s;
+            animation-direction:alternate-reverse;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+    }
+}
+.centerImage{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.twoImagesMiddleText{
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    >img {
+        width: calc(25% - 20px);
+        object-fit: contain;
+        height:fit-content;
+    }
+    p {
+        margin-top: 0;
+        width: 50%;
+        padding: 10px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+}
+
+.littleShit{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 99;
+}
+
+
+.quotesDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    
+    .quote{
+        margin-top: 10px;
+        font-size: larger;
+        background-color: #bebebe;
+        border: 2px solid gray ;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: fit-content;
+        > div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        img{
+            height: 100px;
+        }
+    }
+}
+
+.skulls{
+    display: flex;
+    justify-content: center;
+}
+
+.changesDiv{
+    >div{
+        justify-content: center;
+        align-items: center;
+        >p{
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+            background-color: #bebebe;
+            white-space: pre;
+            unicode-bidi: embed;
+        }
+        >button>h2::before{
+            counter-increment: children;
+            content:counter(children) ". ";
+        }
+    }
+}
+
+.kill{
+    object-fit: cover;
+    height: 60px;
+    width: 180px;
+    border-radius: 20px;
+    &:hover{
+        filter: brightness(75%);
+    }
+}
+.disabled{
+    cursor:wait;
+    filter: brightness(50%);
+    pointer-events: none;
+}
